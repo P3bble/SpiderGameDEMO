@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 2624236568618538659}
   - component: {fileID: 7047544933364642157}
   - component: {fileID: 9084237036921687067}
+  - component: {fileID: 6206581630738129214}
   m_Layer: 0
   m_Name: spider_egg
-  m_TagString: Coin
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -119,4 +120,20 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.425
+  m_Radius: 1
+--- !u!114 &6206581630738129214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3211734041939871540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5f8d8cfcb8817444a5091aa1a82bbde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerMask:
+    serializedVersion: 2
+    m_Bits: 8
+  CollectRadius: 3.88
