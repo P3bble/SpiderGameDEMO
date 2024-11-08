@@ -3,7 +3,10 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - coin_1
+  - Coin
+  - SPIDER_EGG_1
   layers:
   - Default
   - TransparentFX
