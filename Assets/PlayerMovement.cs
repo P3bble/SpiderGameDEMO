@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     Vector2 movement;
 
     public Animator animator;
+    public CoinManager cm;
 
 
     // Update is called once per frame
@@ -33,6 +34,13 @@ public class PlayerMovement : MonoBehaviour
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
     }
 
-    
 
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("egg"))
+        {
+            Destroy(other.gameObject);
+            cm.coinCount++;
+        }
+    }
 }
