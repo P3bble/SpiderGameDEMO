@@ -10,6 +10,7 @@ public class CoinManager : MonoBehaviour
     public int coinCount;
     public Text coinText;
     public GameObject Door;
+    public GameObject Tri;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,9 +21,13 @@ public class CoinManager : MonoBehaviour
     void Update()
     {
         coinText.text = "Spider Eggs: " + coinCount.ToString();
-        if(coinCount == 6)
+        if(coinCount == 7)
         {
             Destroy(Door);
+        }
+        if(coinCount == 9)
+        {
+            Destroy(Tri);
         }
     }
 }
