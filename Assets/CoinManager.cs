@@ -25,7 +25,7 @@ public class CoinManager : MonoBehaviour
         {
             Destroy(Door);
         }
-        if(coinCount == 9)
+        if(coinCount == 10)
         {
             Destroy(Tri);
         }

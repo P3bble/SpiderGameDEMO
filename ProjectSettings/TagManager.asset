@@ -9,6 +9,7 @@ TagManager:
   - SPIDER_EGG_1
   - egg
   - yellow_egg
+  - Enemy
   layers:
   - Default
   - TransparentFX
