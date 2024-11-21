@@ -42,6 +42,13 @@ public class PlayerMovement : MonoBehaviour
             Destroy(other.gameObject);
             cm.coinCount++;
         }
+
+        if (other.gameObject.CompareTag("yellow_egg"))
+        {
+            Destroy(other.gameObject);
+            cm.coinCount += 5;
+        }
+
     }
    
 }
