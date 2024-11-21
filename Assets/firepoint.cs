@@ -1,19 +1,36 @@
 using UnityEngine;
 
-public class FirepointFollower : MonoBehaviour
+public class FollowMouse : MonoBehaviour
 {
+    public Transform player;  // The player's transform to follow
+    public float rotationSpeed = 700f;  // Optional: Speed of rotation
+
     void Update()
     {
-        // Get the mouse position in the 2D screen space (X, Y)
-        Vector3 mousePosition = Input.mousePosition;
+        RotateTowardsMouse();
+    }
 
-        // Convert the screen position to world position (assuming camera is orthographic and the game is top-down)
-        Vector3 worldPosition = Camera.main.ScreenToWorldPoint(mousePosition);
+    void RotateTowardsMouse()
+    {
+        // Get the mouse position in world space
+        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        mousePosition.z = 0;  // Ensure the mouse position is in the 2D plane (no Z rotation)
 
-        // Set the firepoint's Z position to 0 (assuming it's a top-down 2D game and you don't want it to move along the Z axis)
-        worldPosition.z = 0f;
+        // Get the direction from the child object (firepoint) to the mouse
+        Vector3 direction = (mousePosition - transform.position).normalized;
 
-        // Move the firepoint to the calculated world position
-        transform.position = worldPosition;
+        // Calculate the rotation to face the mouse direction
+        Quaternion targetRotation = Quaternion.LookRotation(Vector3.forward, direction);
+
+        // Smoothly rotate towards the target rotation (optional)
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+    }
+
+    // Ensure the firepoint is locked to the player
+    void LateUpdate()
+    {
+        // If this object is a child of the player, its position should be automatically updated
+        // No need to update position manually if it's already a child of the player
+        transform.position = player.position;  // Ensure the firepoint follows the player
     }
 }
