@@ -37,11 +37,16 @@ public class PlayerMovement : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
+
+        // Destroys egg if player collides with it
+
         if (other.gameObject.CompareTag("egg"))
         {
             Destroy(other.gameObject);
             cm.coinCount++;
         }
+
+        // Destroys golden egg if player collides with it
 
         if (other.gameObject.CompareTag("yellow_egg"))
         {

@@ -2,32 +2,34 @@ using UnityEngine;
 
 public class FollowMouse : MonoBehaviour
 {
-    public Transform player;  // The player's transform to follow
-    public float rotationSpeed = 700f;  // Optional: Speed of rotation
+    public Transform player;
+    public float rotationSpeed = 700f;
 
     void Update()
     {
+        // this fixed the bottom code
         RotateTowardsMouse();
     }
 
     void RotateTowardsMouse()
     {
-        // Get the mouse position in world space
+        // Draws a vector from mouse pos to camera
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        mousePosition.z = 0;  // Ensure the mouse position is in the 2D plane (no Z rotation)
+        mousePosition.z = 0;
 
-        // Get the direction from the child object to the mouse
+        // Gets direction of mouse
         Vector3 direction = (mousePosition - transform.position).normalized;
 
-        // Calculate the rotation to face the mouse direction
+        // Mouse direction
         Quaternion targetRotation = Quaternion.LookRotation(Vector3.forward, direction);
 
-        // Smoothly rotate towards the target rotation
+        // Rotate towards the targeted rotation
         transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
     }
 
     void LateUpdate()
     {
+        // Gets player position
         transform.position = player.position;
     }
 }

@@ -5,13 +5,13 @@ public class BulletCollision : MonoBehaviour
     // This function is called when the bullet collides with something
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        // Check if the bullet collides with the target sprite (e.g., an enemy)
+        // Check if the bullet collides with the spider
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            // Destroy the enemy sprite
+            // Destroy spider
             Destroy(collision.gameObject);
 
-            // Destroy the bullet itself after the collision
+            // Destroy the bullet
             Destroy(gameObject);
         }
     }
