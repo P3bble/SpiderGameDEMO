@@ -1548,6 +1548,7 @@ GameObject:
   - component: {fileID: 1654497355}
   - component: {fileID: 1654497354}
   - component: {fileID: 1654497359}
+  - component: {fileID: 1654497361}
   - component: {fileID: 1654497360}
   m_Layer: 0
   m_Name: Player
@@ -1749,6 +1750,21 @@ MonoBehaviour:
   firePoint: {fileID: 808483449}
   bulletSpeed: 10
   fireRate: 0.5
+--- !u!114 &1654497361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1654497353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68ca1384c7bc66048b0027b3b0b53f6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 0
+  maxHealth: 10
+  HEALTH: {fileID: 1670507916}
 --- !u!1001 &1666091328
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1806,6 +1822,85 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f6cbff4530d6a2149a25a823498968b7, type: 3}
+--- !u!1 &1670507914
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1670507915}
+  - component: {fileID: 1670507917}
+  - component: {fileID: 1670507916}
+  m_Layer: 5
+  m_Name: HEALTH_TEXT
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1670507915
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1670507914}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1717826956}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 322.58, y: -89.4}
+  m_SizeDelta: {x: 645.155, y: 111.3231}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1670507916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1670507914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 33
+    m_FontStyle: 1
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 43
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 'Spider Eggs:'
+--- !u!222 &1670507917
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1670507914}
+  m_CullTransparentMesh: 1
 --- !u!1 &1717826952
 GameObject:
   m_ObjectHideFlags: 0
@@ -1901,6 +1996,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 637111390}
+  - {fileID: 1670507915}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1975,6 +2071,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2014605702}
   - component: {fileID: 2014605701}
+  - component: {fileID: 2014605704}
   - component: {fileID: 2014605703}
   m_Layer: 0
   m_Name: Level_1_spider
@@ -2095,6 +2192,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.99, y: 2.83}
   m_EdgeRadius: 0
+--- !u!114 &2014605704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2014605700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b558f988bfb42849bf7a4a52741e716, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player_Health: {fileID: 1654497361}
+  damage: 2
 --- !u!1001 &2048281833
 PrefabInstance:
   m_ObjectHideFlags: 0
