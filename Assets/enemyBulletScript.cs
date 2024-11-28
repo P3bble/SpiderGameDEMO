@@ -32,14 +32,19 @@ public class enemyBulletScript : MonoBehaviour
             Destroy(gameObject);
         }
 
+
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            other.gameObject.GetComponent<Player_Health>().health -= 1;
+            other.gameObject.GetComponent<Player_Health>().health-= 1;
             Destroy(gameObject);
+
         }
+
     }
+
 }
+

@@ -1706,10 +1706,11 @@ GameObject:
   m_Component:
   - component: {fileID: 1522948712}
   - component: {fileID: 1522948711}
+  - component: {fileID: 1522948714}
   - component: {fileID: 1522948713}
   m_Layer: 0
   m_Name: Level_2_spider
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1754,7 +1755,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 35906202589fc5542a8dbd8aecf90479, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1796,6 +1797,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   e_bullet: {fileID: 7468036118839212002, guid: 29f669143c8595e42870c61ad516ea17, type: 3}
   e_bulletPos: {fileID: 706306917}
+--- !u!114 &1522948714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1522948710}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b558f988bfb42849bf7a4a52741e716, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player_Health: {fileID: 1654497361}
+  damage: 2
 --- !u!1 &1623626188 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2679361608854619136, guid: 53e6a6046c73e6d419d5a36a3eb95160, type: 3}

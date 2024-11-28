@@ -18,6 +18,10 @@ public class Player_Health : MonoBehaviour
     {
         HEALTH.text = "Health: " + health.ToString();
 
+        if (health <= 0)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
     }
     public void TakeDamage(int ammount)
     {
