@@ -24,5 +24,6 @@ public class EnemyDamage : MonoBehaviour
         {
             player_Health.TakeDamage(damage);
         }
+        
     }
 }
