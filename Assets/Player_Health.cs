@@ -10,8 +10,10 @@ public class Player_Health : MonoBehaviour
     public int health;
     public int maxHealth = 10;
     public Text HEALTH;
+
     // Start is called before the first frame update
     void Start() => health = maxHealth;
+    
 
     // Update is called once per frame
     void Update()
@@ -25,7 +27,11 @@ public class Player_Health : MonoBehaviour
     }
     public void TakeDamage(int ammount)
     {
-        health -= ammount;
+
+    
+
+
+            health -= ammount;
         if (health <= 0 )
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
