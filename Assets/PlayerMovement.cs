@@ -14,6 +14,8 @@ public class PlayerMovement : MonoBehaviour
     public Animator animator;
     public CoinManager cm;
 
+   
+
 
     // Update is called once per frame
     void Update()
@@ -42,8 +44,9 @@ public class PlayerMovement : MonoBehaviour
 
         if (other.gameObject.CompareTag("egg"))
         {
-            Destroy(other.gameObject);
+            
             cm.coinCount++;
+        
         }
 
         // Destroys golden egg if player collides with it
