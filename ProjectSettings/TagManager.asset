@@ -10,6 +10,7 @@ TagManager:
   - egg
   - yellow_egg
   - Enemy
+  - pickup
   layers:
   - Default
   - TransparentFX

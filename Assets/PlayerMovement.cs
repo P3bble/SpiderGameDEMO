@@ -14,10 +14,12 @@ public class PlayerMovement : MonoBehaviour
 
     public Animator animator;
     public CoinManager cm;
+    public power_ups pu;
 
     // shield mechanics
     public GameObject hide;
     public bool isHideActive = false;
+    public bool isPickupGot = false;
 
    
 
@@ -33,14 +35,16 @@ public class PlayerMovement : MonoBehaviour
         animator.SetFloat("Vertical", movement.y);
         animator.SetFloat("Speed", movement.sqrMagnitude);
 
-        if (Input.GetKey(KeyCode.LeftShift))
+        if (Input.GetKey(KeyCode.LeftShift) && isPickupGot == true)
         {
             hide.SetActive(true);
+            isHideActive = true;
             normalSpeed = 1f;
         }
         else
         {
             hide.SetActive(false);
+            isHideActive = false;
             normalSpeed = 5f;
         }
 
@@ -71,6 +75,15 @@ public class PlayerMovement : MonoBehaviour
             
             cm.coinCount++;
         
+        }
+
+        if (other.gameObject.CompareTag("pickup"))
+        {
+
+            isPickupGot = true;
+            Destroy(other.gameObject);
+
+
         }
 
         // Destroys golden egg if player collides with it

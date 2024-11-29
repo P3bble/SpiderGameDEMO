@@ -6,6 +6,7 @@ public class EnemyDamage : MonoBehaviour
 {
     public Player_Health player_Health;
     public int damage = 2;
+    public PlayerMovement playerMovement;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +23,13 @@ public class EnemyDamage : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            player_Health.TakeDamage(damage);
+            if (playerMovement.isHideActive == false)
+            {
+                player_Health.TakeDamage(damage);  
+
+            }
+
+                
         }
         
 
